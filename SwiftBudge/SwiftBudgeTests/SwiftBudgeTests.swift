@@ -10,27 +10,42 @@ import XCTest
 
 final class SwiftBudgeTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var budgetRepository: BudgetRepository!
+    var budgetService: BudgetService!
+
+    override func setUp() {
+        super.setUp()
+
+        budgetRepository = FakeBudgetRepository()
+        budgetService = BudgetService(repository: budgetRepository)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_query_whole_month() {
+        let start = Date.date(string: "20230101")
+        let end = Date.date(string: "20230131")
+        XCTAssertEqual(budgetService.query(start: start, end: end), 310)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func test_query_partial_month() {
+        let start = Date.date(string: "20230101")
+        let end = Date.date(string: "20230101")
+        XCTAssertEqual(budgetService.query(start: start, end: end), 10)
     }
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+struct FakeBudgetRepository: BudgetRepository {
+    func getAll() -> [Budget] {
+        [
+            Budget(yearMonth: "202301", amount: 310),
+            Budget(yearMonth: "202302", amount: 2800),
+        ]
     }
+}
 
+extension Date {
+    static func date(string: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        return dateFormatter.date(from: string)!
+    }
 }
