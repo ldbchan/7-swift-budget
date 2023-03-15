@@ -31,6 +31,24 @@ final class SwiftBudgeTests: XCTestCase {
         let end = Date.date(string: "20230101")
         XCTAssertEqual(budgetService.query(start: start, end: end), 10)
     }
+
+    func test_query_cross_month() {
+        let start = Date.date(string: "20230131")
+        let end = Date.date(string: "20230202")
+        XCTAssertEqual(budgetService.query(start: start, end: end), 210)
+    }
+
+    func test_query_no_month_budget() {
+        let start = Date.date(string: "20230301")
+        let end = Date.date(string: "20230301")
+        XCTAssertEqual(budgetService.query(start: start, end: end), 0)
+    }
+
+    func test_query_invalid_date() {
+        let start = Date.date(string: "20230228")
+        let end = Date.date(string: "20230201")
+        XCTAssertEqual(budgetService.query(start: start, end: end), 0)
+    }
 }
 
 struct FakeBudgetRepository: BudgetRepository {

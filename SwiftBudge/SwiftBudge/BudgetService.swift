@@ -88,7 +88,7 @@ class BudgetService {
 
     func getBudgets(days: Int, date: Date) -> Double {
         let monthDays = daysInMonth(date)
-        let percentage = Double(days / monthDays)
+        let percentage = Double(days) / Double(monthDays)
         return getMonthBudget(date.toYearMonth()) * percentage
     }
 
@@ -109,8 +109,8 @@ extension Date {
 
     func nextMonth() -> Date {
         let calendar = Calendar.current
-        var components = calendar.dateComponents([.month], from: self)
+        var components = calendar.dateComponents([.year, .month], from: self)
         components.month = components.month! + 1
-        return components.date!
+        return components.date ?? Date.now
     }
 }
