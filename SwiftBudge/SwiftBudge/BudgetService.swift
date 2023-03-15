@@ -75,7 +75,6 @@ class BudgetService {
     }
 
     func numberOfDaysBetween(_ start: Date, _ end: Date) -> Int {
-        let calendar = Calendar.current
         let numberOfDays = Calendar.current.dateComponents([.day], from: start, to: end)
         return numberOfDays.day! + 1
     }
@@ -111,6 +110,6 @@ extension Date {
         let calendar = Calendar.current
         var components = calendar.dateComponents([.year, .month], from: self)
         components.month = components.month! + 1
-        return components.date ?? Date.now
+        return calendar.date(from: components)!
     }
 }
