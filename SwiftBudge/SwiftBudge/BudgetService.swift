@@ -25,20 +25,18 @@ class BudgetService {
 
         if isSameMonth(start: start, end: end) {
             let days = numberOfDaysBetween(start, end)
-            return Double(
-                getBudgets(days: days, date: start)
-            )
+            return getBudgets(days: days, date: start)
         } else {
             let firstMonthDays = remainDaysInMonth(start)
             let lastMonthDays = partialDaysInMonth(end)
-            var amount: Double = getBudgets(days: firstMonthDays, date: start) + getBudgets(days: lastMonthDays, date: end)
+            var amount = getBudgets(days: firstMonthDays, date: start) + getBudgets(days: lastMonthDays, date: end)
 
             var currentMonth = start.nextMonth()
             while currentMonth.month() < end.month() {
                 amount += getMonthBudget(currentMonth.toYearMonth())
                 currentMonth = currentMonth.nextMonth()
             }
-            return Double(amount)
+            return amount
         }
     }
 
