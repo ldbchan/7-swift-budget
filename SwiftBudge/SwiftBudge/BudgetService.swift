@@ -30,6 +30,6 @@ class BudgetService {
         if end < budget.firstDay() {
             return 0
         }
-        return Double(intervalDays)
+        return Double(intervalDays) * budget.dailyAmount()
     }
 }

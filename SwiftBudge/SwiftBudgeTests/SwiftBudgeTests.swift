@@ -52,6 +52,11 @@ final class SwiftBudgeTests: XCTestCase {
         totalAmountShouldBe(start: "20230427", end: "20230503", expected: 4)
     }
 
+    func test_daily_amount_should_be_100() {
+        givenBudgets(Budget(yearMonth: "202304", amount: 3000))
+        totalAmountShouldBe(start: "20230427", end: "20230503", expected: 400)
+    }
+
     private func givenBudgets(_ budgets: Budget...) {
         repo.budgets = budgets
     }

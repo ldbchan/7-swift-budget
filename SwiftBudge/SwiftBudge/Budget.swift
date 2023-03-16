@@ -18,4 +18,8 @@ struct Budget {
     func lastDay() -> Date {
         Date(yearMonth, format: "yyyyMM").lastDayOfMonth()
     }
+
+    func dailyAmount() -> Double {
+        Double(amount) / Double(Date(yearMonth, format: "yyyyMM").lengthOfMonth())
+    }
 }
