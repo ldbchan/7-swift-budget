@@ -14,9 +14,6 @@
 		8753C10829C1B70600546EA3 /* SwiftBudgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C10729C1B70600546EA3 /* SwiftBudgeTests.swift */; };
 		8753C11229C1B70600546EA3 /* SwiftBudgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C11129C1B70600546EA3 /* SwiftBudgeUITests.swift */; };
 		8753C11429C1B70600546EA3 /* SwiftBudgeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C11329C1B70600546EA3 /* SwiftBudgeUITestsLaunchTests.swift */; };
-		8753C12229C1BBD900546EA3 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C12129C1BBD900546EA3 /* Budget.swift */; };
-		8753C12429C1BC0500546EA3 /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C12329C1BC0500546EA3 /* BudgetService.swift */; };
-		8753C12629C1BC1B00546EA3 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C12529C1BC1B00546EA3 /* BudgetRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +44,6 @@
 		8753C10D29C1B70600546EA3 /* SwiftBudgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftBudgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8753C11129C1B70600546EA3 /* SwiftBudgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBudgeUITests.swift; sourceTree = "<group>"; };
 		8753C11329C1B70600546EA3 /* SwiftBudgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBudgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8753C12129C1BBD900546EA3 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
-		8753C12329C1BC0500546EA3 /* BudgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetService.swift; sourceTree = "<group>"; };
-		8753C12529C1BC1B00546EA3 /* BudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +96,6 @@
 			children = (
 				8753C0F629C1B70500546EA3 /* SwiftBudgeApp.swift */,
 				8753C0F829C1B70500546EA3 /* ContentView.swift */,
-				8753C12129C1BBD900546EA3 /* Budget.swift */,
-				8753C12529C1BC1B00546EA3 /* BudgetRepository.swift */,
-				8753C12329C1BC0500546EA3 /* BudgetService.swift */,
 				8753C0FA29C1B70600546EA3 /* Assets.xcassets */,
 				8753C0FC29C1B70600546EA3 /* Preview Content */,
 			);
@@ -268,9 +259,6 @@
 			files = (
 				8753C0F929C1B70500546EA3 /* ContentView.swift in Sources */,
 				8753C0F729C1B70500546EA3 /* SwiftBudgeApp.swift in Sources */,
-				8753C12429C1BC0500546EA3 /* BudgetService.swift in Sources */,
-				8753C12229C1BBD900546EA3 /* Budget.swift in Sources */,
-				8753C12629C1BC1B00546EA3 /* BudgetRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
