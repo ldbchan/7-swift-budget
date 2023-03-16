@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class BudgetService {
     let repository: BudgetRepository
     var allBudgets: [Budget] = []
@@ -24,16 +23,33 @@ class BudgetService {
         }
 
         if isSameMonth(start: start, end: end) {
-            let days = numberOfDaysBetween(start, end)
-            return getBudgets(days: days, date: start)
+            let period = Period(start: start, end: end)
+            return getBudget(days: period.days(), date: start)
         } else {
-            let firstMonthDays = remainDaysInMonth(start)
-            let lastMonthDays = partialDaysInMonth(end)
-            var amount = getBudgets(days: firstMonthDays, date: start) + getBudgets(days: lastMonthDays, date: end)
+            var amount = 0.0
+            var currentMonth = start
 
-            var currentMonth = start.nextMonth()
-            while currentMonth.month() < end.month() {
-                amount += getMonthBudget(currentMonth.toYearMonth())
+            while currentMonth.month() <= end.month() {
+                if let budget = allBudgets.first(where: { $0.yearMonth == currentMonth.toYearMonth() }) {
+                    var overlappingStart: Date
+                    var overlappingEnd: Date
+
+                    if budget.yearMonth == start.toYearMonth() {
+                        overlappingStart = start
+                        overlappingEnd = budget.lastDay()
+                    }
+                    else if budget.yearMonth == end.toYearMonth() {
+                        overlappingStart = budget.firstDay()
+                        overlappingEnd = end
+                    }
+                    else {
+                        overlappingStart = budget.firstDay()
+                        overlappingEnd = budget.lastDay()
+                    }
+                    let period = Period(start: overlappingStart, end: overlappingEnd)
+                    amount += budget.dailyAmount() * Double(period.days())
+                }
+
                 currentMonth = currentMonth.nextMonth()
             }
             return amount
@@ -72,26 +88,24 @@ class BudgetService {
         return components.day!
     }
 
-    func numberOfDaysBetween(_ start: Date, _ end: Date) -> Int {
-        let numberOfDays = Calendar.current.dateComponents([.day], from: start, to: end)
-        return numberOfDays.day! + 1
-    }
-
     // MARK: Budget
 
     func getMonthBudget(_ month: YearMonth) -> Double {
         Double(allBudgets.first(where: { $0.yearMonth == month })?.amount ?? 0)
     }
 
-    func getBudgets(days: Int, date: Date) -> Double {
-        let monthDays = daysInMonth(date)
-        let percentage = Double(days) / Double(monthDays)
-        return getMonthBudget(date.toYearMonth()) * percentage
+    func getBudget(days: Int, date: Date) -> Double {
+        getMonthBudget(date.toYearMonth()) * Double(days) / Double(date.lengthOfMonth())
     }
-
 }
 
 extension Date {
+    func lengthOfMonth() -> Int {
+        let calendar = Calendar.current
+        let interval = calendar.dateInterval(of: .month, for: self)!
+        return calendar.dateComponents([.day], from: interval.start, to: interval.end).day!
+    }
+
     func toYearMonth() -> YearMonth {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMM"
@@ -109,5 +123,14 @@ extension Date {
         var components = calendar.dateComponents([.year, .month], from: self)
         components.month = components.month! + 1
         return calendar.date(from: components)!
+    }
+
+    func firstDayInMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+
+    func lastDayInMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: firstDayInMonth())!
+
     }
 }

@@ -49,6 +49,12 @@ final class SwiftBudgeTests: XCTestCase {
         let end = Date.date(string: "20230201")
         XCTAssertEqual(budgetService.query(start: start, end: end), 0)
     }
+
+//    func test_cross_year() {
+//        let start = Date.date(string: "20221230")
+//        let end = Date.date(string: "20230101")
+//        XCTAssertEqual(budgetService.query(start: start, end: end), 12)
+//    }
 }
 
 struct FakeBudgetRepository: BudgetRepository {
@@ -56,6 +62,7 @@ struct FakeBudgetRepository: BudgetRepository {
         [
             Budget(yearMonth: "202301", amount: 310),
             Budget(yearMonth: "202302", amount: 2800),
+//            Budget(yearMonth: "202212", amount: 31),
         ]
     }
 }
