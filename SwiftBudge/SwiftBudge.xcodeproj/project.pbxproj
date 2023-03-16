@@ -14,6 +14,9 @@
 		8753C10829C1B70600546EA3 /* SwiftBudgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C10729C1B70600546EA3 /* SwiftBudgeTests.swift */; };
 		8753C11229C1B70600546EA3 /* SwiftBudgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C11129C1B70600546EA3 /* SwiftBudgeUITests.swift */; };
 		8753C11429C1B70600546EA3 /* SwiftBudgeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C11329C1B70600546EA3 /* SwiftBudgeUITestsLaunchTests.swift */; };
+		8753C12A29C30BF300546EA3 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C12929C30BF200546EA3 /* Data+Extensions.swift */; };
+		877F0A3629C315A500B69464 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3529C315A500B69464 /* DateExtensionTests.swift */; };
+		877F0A3829C318C900B69464 /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3729C318C900B69464 /* BudgetService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		8753C10D29C1B70600546EA3 /* SwiftBudgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftBudgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8753C11129C1B70600546EA3 /* SwiftBudgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBudgeUITests.swift; sourceTree = "<group>"; };
 		8753C11329C1B70600546EA3 /* SwiftBudgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBudgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8753C12929C30BF200546EA3 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		877F0A3529C315A500B69464 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		877F0A3729C318C900B69464 /* BudgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +102,10 @@
 			children = (
 				8753C0F629C1B70500546EA3 /* SwiftBudgeApp.swift */,
 				8753C0F829C1B70500546EA3 /* ContentView.swift */,
+				8753C12929C30BF200546EA3 /* Data+Extensions.swift */,
 				8753C0FA29C1B70600546EA3 /* Assets.xcassets */,
 				8753C0FC29C1B70600546EA3 /* Preview Content */,
+				877F0A3729C318C900B69464 /* BudgetService.swift */,
 			);
 			path = SwiftBudge;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				8753C10729C1B70600546EA3 /* SwiftBudgeTests.swift */,
+				877F0A3529C315A500B69464 /* DateExtensionTests.swift */,
 			);
 			path = SwiftBudgeTests;
 			sourceTree = "<group>";
@@ -257,7 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8753C12A29C30BF300546EA3 /* Data+Extensions.swift in Sources */,
 				8753C0F929C1B70500546EA3 /* ContentView.swift in Sources */,
+				877F0A3829C318C900B69464 /* BudgetService.swift in Sources */,
 				8753C0F729C1B70500546EA3 /* SwiftBudgeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8753C10829C1B70600546EA3 /* SwiftBudgeTests.swift in Sources */,
+				877F0A3629C315A500B69464 /* DateExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
