@@ -1,5 +1,5 @@
 //
-//  Budget.swift
+//  swift
 //  SwiftBudge
 //
 //  Created by chantil on 2023/3/16.
@@ -21,5 +21,9 @@ struct Budget {
 
     func dailyAmount() -> Double {
         Double(amount) / Double(Date(yearMonth, format: "yyyyMM").lengthOfMonth())
+    }
+
+    func period() -> Period {
+        Period(start: firstDay(), end: lastDay())
     }
 }

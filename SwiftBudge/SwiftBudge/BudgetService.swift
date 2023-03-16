@@ -20,16 +20,8 @@ class BudgetService {
         }
 
         let budget = budgets.first!
-        let overlappingStart = budget.firstDay() > start ? budget.firstDay() : start
-        let overlappingEnd = budget.lastDay() < end ? budget.lastDay() : end
-        let intervalDays = Date.numberOfDaysBetween(overlappingStart, overlappingEnd)
+        let intervalDays = Period(start: start, end: end).overlappingDays(budget.period())
 
-        if start > budget.lastDay() {
-            return 0
-        }
-        if end < budget.firstDay() {
-            return 0
-        }
         return Double(intervalDays) * budget.dailyAmount()
     }
 }

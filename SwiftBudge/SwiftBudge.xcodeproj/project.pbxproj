@@ -19,6 +19,7 @@
 		877F0A3829C318C900B69464 /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3729C318C900B69464 /* BudgetService.swift */; };
 		877F0A3A29C3198C00B69464 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3929C3198C00B69464 /* BudgetRepository.swift */; };
 		877F0A3C29C319A800B69464 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3B29C319A800B69464 /* Budget.swift */; };
+		877F0A3E29C3334700B69464 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3D29C3334700B69464 /* Period.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		877F0A3729C318C900B69464 /* BudgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetService.swift; sourceTree = "<group>"; };
 		877F0A3929C3198C00B69464 /* BudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
 		877F0A3B29C319A800B69464 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		877F0A3D29C3334700B69464 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				8753C0F629C1B70500546EA3 /* SwiftBudgeApp.swift */,
 				8753C0F829C1B70500546EA3 /* ContentView.swift */,
 				877F0A3B29C319A800B69464 /* Budget.swift */,
+				877F0A3D29C3334700B69464 /* Period.swift */,
 				877F0A3929C3198C00B69464 /* BudgetRepository.swift */,
 				877F0A3729C318C900B69464 /* BudgetService.swift */,
 				8753C12929C30BF200546EA3 /* Data+Extensions.swift */,
@@ -278,6 +281,7 @@
 				877F0A3829C318C900B69464 /* BudgetService.swift in Sources */,
 				8753C0F729C1B70500546EA3 /* SwiftBudgeApp.swift in Sources */,
 				877F0A3A29C3198C00B69464 /* BudgetRepository.swift in Sources */,
+				877F0A3E29C3334700B69464 /* Period.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
