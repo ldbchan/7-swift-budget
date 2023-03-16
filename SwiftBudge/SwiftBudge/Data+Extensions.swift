@@ -8,6 +8,10 @@
 import Foundation
 
 extension Date {
+    static func numberOfDaysBetween(_ start: Date, _ end: Date) -> Int {
+        Calendar.current.dateComponents([.day], from: start, to: end).day! + 1
+    }
+
     func lengthOfMonth() -> Int {
         Calendar.current.dateComponents([.year, .month, .day], from: lastDayOfMonth()).day!
     }

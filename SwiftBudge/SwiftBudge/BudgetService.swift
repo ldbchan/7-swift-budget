@@ -18,8 +18,7 @@ class BudgetService {
         guard !repo.getAll().isEmpty else {
             return 0
         }
-        return Double(
-            repo.getAll().first!.amount
-        )
+        let intervalDays = Date.numberOfDaysBetween(start, end)
+        return Double(intervalDays)
     }
 }

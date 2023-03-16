@@ -27,6 +27,11 @@ final class SwiftBudgeTests: XCTestCase {
         totalAmountShouldBe(start: "20230401", end: "20230430", expected: 30)
     }
 
+    func test_period_inside_budget_month() {
+        givenBudgets(Budget(yearMonth: "202304", amount: 30))
+        totalAmountShouldBe(start: "20230403", end: "20230403", expected: 1)
+    }
+
     private func givenBudgets(_ budgets: Budget...) {
         repo.budgets = budgets
     }
