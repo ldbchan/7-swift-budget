@@ -17,6 +17,8 @@
 		8753C12A29C30BF300546EA3 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753C12929C30BF200546EA3 /* Data+Extensions.swift */; };
 		877F0A3629C315A500B69464 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3529C315A500B69464 /* DateExtensionTests.swift */; };
 		877F0A3829C318C900B69464 /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3729C318C900B69464 /* BudgetService.swift */; };
+		877F0A3A29C3198C00B69464 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3929C3198C00B69464 /* BudgetRepository.swift */; };
+		877F0A3C29C319A800B69464 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F0A3B29C319A800B69464 /* Budget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		8753C12929C30BF200546EA3 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		877F0A3529C315A500B69464 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		877F0A3729C318C900B69464 /* BudgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetService.swift; sourceTree = "<group>"; };
+		877F0A3929C3198C00B69464 /* BudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
+		877F0A3B29C319A800B69464 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +106,12 @@
 			children = (
 				8753C0F629C1B70500546EA3 /* SwiftBudgeApp.swift */,
 				8753C0F829C1B70500546EA3 /* ContentView.swift */,
+				877F0A3B29C319A800B69464 /* Budget.swift */,
+				877F0A3929C3198C00B69464 /* BudgetRepository.swift */,
+				877F0A3729C318C900B69464 /* BudgetService.swift */,
 				8753C12929C30BF200546EA3 /* Data+Extensions.swift */,
 				8753C0FA29C1B70600546EA3 /* Assets.xcassets */,
 				8753C0FC29C1B70600546EA3 /* Preview Content */,
-				877F0A3729C318C900B69464 /* BudgetService.swift */,
 			);
 			path = SwiftBudge;
 			sourceTree = "<group>";
@@ -268,8 +274,10 @@
 			files = (
 				8753C12A29C30BF300546EA3 /* Data+Extensions.swift in Sources */,
 				8753C0F929C1B70500546EA3 /* ContentView.swift in Sources */,
+				877F0A3C29C319A800B69464 /* Budget.swift in Sources */,
 				877F0A3829C318C900B69464 /* BudgetService.swift in Sources */,
 				8753C0F729C1B70500546EA3 /* SwiftBudgeApp.swift in Sources */,
+				877F0A3A29C3198C00B69464 /* BudgetRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
