@@ -18,9 +18,10 @@ class BudgetService {
         guard case let budgets = repo.getAll(), !budgets.isEmpty else {
             return 0
         }
-        let intervalDays = Date.numberOfDaysBetween(start, end)
 
         let budget = budgets.first!
+        let overlappingStart = budget.firstDay() > start ? budget.firstDay() : start
+        let intervalDays = Date.numberOfDaysBetween(overlappingStart, end)
 
         if start > budget.lastDay() {
             return 0
