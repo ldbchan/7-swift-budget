@@ -10,4 +10,8 @@ import Foundation
 struct Budget {
     let yearMonth: String
     let amount: Int
+
+    func firstDay() -> Date {
+        Date(yearMonth, format: "yyyyMM").firstDayOfMonth()
+    }
 }

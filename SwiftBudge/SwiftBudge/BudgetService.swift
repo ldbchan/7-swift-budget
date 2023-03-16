@@ -15,10 +15,16 @@ class BudgetService {
     }
 
     func query(start: Date, end: Date) -> Double {
-        guard !repo.getAll().isEmpty else {
+        guard case let budgets = repo.getAll(), !budgets.isEmpty else {
             return 0
         }
         let intervalDays = Date.numberOfDaysBetween(start, end)
+
+        let budget = budgets.first!
+
+        if end < budget.firstDay() {
+            return 0
+        }
         return Double(intervalDays)
     }
 }
