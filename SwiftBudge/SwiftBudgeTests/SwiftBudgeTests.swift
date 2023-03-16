@@ -37,6 +37,12 @@ final class SwiftBudgeTests: XCTestCase {
         totalAmountShouldBe(start: "20230303", end: "20230303", expected: 0)
     }
 
+    func test_period_no_overlap_after_budget_last_day() {
+        givenBudgets(Budget(yearMonth: "202304", amount: 30))
+        totalAmountShouldBe(start: "20230503", end: "20230503", expected: 0)
+    }
+
+
     private func givenBudgets(_ budgets: Budget...) {
         repo.budgets = budgets
     }

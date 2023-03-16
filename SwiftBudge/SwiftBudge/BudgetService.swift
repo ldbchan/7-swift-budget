@@ -22,6 +22,9 @@ class BudgetService {
 
         let budget = budgets.first!
 
+        if start > budget.lastDay() {
+            return 0
+        }
         if end < budget.firstDay() {
             return 0
         }

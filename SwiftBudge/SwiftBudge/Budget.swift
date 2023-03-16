@@ -14,4 +14,8 @@ struct Budget {
     func firstDay() -> Date {
         Date(yearMonth, format: "yyyyMM").firstDayOfMonth()
     }
+
+    func lastDay() -> Date {
+        Date(yearMonth, format: "yyyyMM").lastDayOfMonth()
+    }
 }
